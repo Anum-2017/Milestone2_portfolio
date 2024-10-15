@@ -60,7 +60,7 @@ const projectsData = [
     id: 7,
     title: "Ecommerce Website (Figma Template)",
     description: "Ecommerce Website using next.js and tailwind css.",
-    image: "images/projects/shop.co website.png",
+    image: "images/projects/ecommerce website.png",
     tag: ["All", "Next.JS"],
     gitUrl: "https://github.com/Anum-2017/shop.co-eCommerce-website.git",
     previewUrl: "https://shop-co-e-commerce-website.vercel.app/",
