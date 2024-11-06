@@ -1,9 +1,9 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; 
 
 const ContactSection = () => {
-
   const socials = [
     { icon: 'github-icon.svg', path: 'https://github.com/Anum-2017' },
     { icon: 'linkedin-icon.svg', path: 'https://www.linkedin.com/in/anum-k-442b2022b/' },
@@ -14,28 +14,31 @@ const ContactSection = () => {
       <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'></div>
       <div className='z-10'>
         <h1 className='text-xl font-bold text-white my-2'>Lets Connect</h1>
-        <br></br>
+        <br />
         <p className='text-[#ADB7BE] mb-4 max-w-md'>
           I am currently looking for new opportunities, my inbox is always open. 
           Whenever you have a question, or just want to say hi, 
           I will try my best to get back to you!
         </p>
-        <br></br>
+        <br />
         <div className='socials flex flex-row gap-2'>
-        <br></br>
+          <br />
           {socials.map((social, index) => (
             <Link key={index} href={social.path} target='_blank'>
-              <img src={`icons/${social.icon}`}
-                alt={social.path.split('/')[2]}
+              <Image
+                src={`/icons/${social.icon}`} 
+                alt={`Visit my ${social.path.split('/')[2]} profile`} 
                 className='w-6 h-6 hover:brightness-200'
                 style={{ filter: 'brightness(0) invert(1)' }}
+                width={24} // Include width and height for optimization
+                height={24}
               />
             </Link>
           ))}
         </div>
       </div>
       <div>
-        <form className='flex flex-col' >
+        <form className='flex flex-col'>
           <div className='mb-6'>
             <label htmlFor='email' className='text-white block mb-2 text-sm font-medium'>
               Your Email
@@ -73,7 +76,7 @@ const ContactSection = () => {
               placeholder="Let's talk about..."
             />
           </div>
-          <button type='submit' className='bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full '>
+          <button type='submit' className='bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>
             Send Message
           </button>
         </form>
