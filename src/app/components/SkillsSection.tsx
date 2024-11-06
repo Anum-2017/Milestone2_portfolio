@@ -2,11 +2,22 @@ import React from "react";
 import { IoMdCheckboxOutline } from "react-icons/io";
 
 const SkillsSection = () => {
+  const skills = [
+    { name: "HTML", progress: 100 },
+    { name: "CSS", progress: 95 },
+    { name: "Javascript / Typescript", progress: 90 },
+    { name: "NEXT.JS", progress: 70 },
+    { name: "TAILWIND CSS", progress: 75 },
+    { name: "CANVA", progress: 85 },
+    { name: "PHP", progress: 90 },
+    { name: "MY SQL", progress: 60 },
+    { name: "Bootstrap", progress: 100 }
+  ];
 
   return (
-      <section id="skills" className="text-gray-600 body-font">
-        <div className="container px-5 py-19 mx-auto">
-          <div className="flex flex-col font-serif text-center w-full mb-20">
+    <section id="skills" className=" text-gray-200 py-16 px-4">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col font-serif text-center w-full mb-20">
             <h1 className="sm:text-5xl text-5xl font-serif font-bold title-font text-white">
               My
               <span className="text-5xl text-white sm:text-5xl font-serif font-bold ml-[15px]">
@@ -14,181 +25,30 @@ const SkillsSection = () => {
               </span>
             </h1>
           </div>
-          <div className="flex flex-wrap -m-4 -mt-[5rem]">
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-              <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    HTML
-                  </h2>
+
+        <div className="flex flex-wrap gap-6 justify-between">
+          {skills.map((skill, index) => (
+            <div className="p-8 rounded-lg flex flex-col justify-between flex-1 min-w-[280px] max-w-[300px] transition-transform transform hover:scale-105 hover:shadow-lg" key={index}>
+              <div className="flex items-center mb-5">
+                <div className="w-10 h-10 bg-pink-500 rounded-full flex justify-center items-center mr-4">
+                  <IoMdCheckboxOutline className="text-white text-xl" />
                 </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[100%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">100%</p>
+                <h2 className="text-xl font-semibold text-white">{skill.name}</h2>
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <div className="w-full h-2 bg-gray-400 rounded-full relative">
+                  <div
+                    className="bg-pink-500 h-full rounded-full"
+                    style={{ width: `${skill.progress}%` }}
+                  ></div>
                 </div>
+                <p className="font-bold text-pink-500 ml-4">{skill.progress}%</p>
               </div>
             </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-              <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    CSS
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[95%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">95%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-            <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    Javascript / Typescript
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[90%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">90%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-             <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    NEXT.JS 
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[70%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">70%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-             <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    TAILWIND CSS
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[75%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">75%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-            <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    CANVA
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[85%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">85%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-            <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    PHP
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[90%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">90%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-              <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    MY SQL
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[60%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">60%</p>
-                </div>
-              </div>
-            </div>
-            {/* Skill */}
-            <div className="p-4 md:w-1/3 font-serif">
-              <div className="flex rounded-lg h-full p-8 flex-col bg-black-300">
-                <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-pink-500 text-white flex-shrink-0">
-                    <IoMdCheckboxOutline className="text-xl font-bold" />
-                  </div>
-                  <h2 className="text-white text-lg title-font font-medium">
-                    Bootstrap
-                  </h2>
-                </div>
-                <div className="flex-grow">
-                  <div className="relative h-1 w-full bg-gray-300">
-                    <div className="absolute bg-pink-500 h-1 rounded-xl w-[100%]"></div>
-                  </div>
-                  <p className="font-bold text-pink-500 text-right">100%</p>
-                </div>
-              </div>
-            </div> 
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
   );
 };
 
