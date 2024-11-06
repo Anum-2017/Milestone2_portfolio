@@ -18,6 +18,7 @@ const AboutSection = () => {
            Currently, my focus is on expanding my skill set. I am actively mastering new programming languages, exploring diverse courses, and delving into emerging technologies within the industry. Specifically, I am deeply engaged in Artificial Intelligence, Web 3.0, and the Metaverse.
          </p>
         </div>
+      </div>
     </section>
   );
 };
