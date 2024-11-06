@@ -1,10 +1,8 @@
-"use client"; // This is specific to Next.js (Client Component)
+"use client"; 
 
-// Import necessary libraries
 import React from 'react';
 import Image from 'next/image';
 
-// Define the component with the correct return type (React.FC means Function Component)
 const AboutSection: React.FC = () => {
   return (
     <section id="about" className="text-white">
