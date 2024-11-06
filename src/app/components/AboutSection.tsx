@@ -1,11 +1,15 @@
-"use client";
+"use client"; // This is specific to Next.js (Client Component)
+
+// Import necessary libraries
 import React from 'react';
 import Image from 'next/image';
 
-const AboutSection = () => {
+// Define the component with the correct return type (React.FC means Function Component)
+const AboutSection: React.FC = () => {
   return (
     <section id="about" className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        
         <Image
           src="/images/about-image.webp" 
           alt="about"
@@ -13,7 +17,7 @@ const AboutSection = () => {
           height={500} 
           className="object-cover"
         />
-
+        
         <div className="text-container">
           <h1 className="text-5xl font-bold text-white font-serif mb-4">About Me</h1>
           <p className="text-lg text-[#ADB7BE] leading-relaxed">
@@ -22,7 +26,7 @@ const AboutSection = () => {
             Currently, my focus is on expanding my skill set. I am actively mastering new programming languages, exploring diverse courses, and delving into emerging technologies within the industry. Specifically, I am deeply engaged in Artificial Intelligence, Web 3.0, and the Metaverse.
           </p>
         </div>
-
+        
       </div> 
     </section>
   );
