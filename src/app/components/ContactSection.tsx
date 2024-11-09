@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 const ContactSection = () => {
   const socials = [
@@ -10,73 +10,63 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative z-10'>
-      <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'></div>
-      <div className='z-10'>
-        <h1 className='text-xl font-bold text-white my-2'>Lets Connect</h1>
-        <br />
-        <p className='text-[#ADB7BE] mb-4 max-w-md'>
+    <section id="contact" className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-12 pt-24 pb-24 relative z-10">
+      <div className="z-10 flex flex-col">
+        <h1 className="text-xl font-bold text-white mb-4">Lets Connect</h1>
+        <p className="text-[#ADB7BE] mb-4 max-w-[25rem]">
           I am currently looking for new opportunities, my inbox is always open. 
           Whenever you have a question, or just want to say hi, 
           I will try my best to get back to you!
         </p>
-        <br />
-        <div className='socials flex flex-row gap-2'>
-          <br />
+        <div className="flex gap-2">
           {socials.map((social, index) => (
-            <Link key={index} href={social.path} target='_blank'>
+            <Link key={index} href={social.path} target="_blank">
               <Image
-                src={`/icons/${social.icon}`} 
-                alt={`Visit my ${social.path.split('/')[2]} profile`} 
-                className='w-6 h-6 hover:brightness-200'
-                style={{ filter: 'brightness(0) invert(1)' }}
-                width={24} // Include width and height for optimization
+                src={`/icons/${social.icon}`}
+                alt={`Visit my ${social.path.split('/')[2]} profile`}
+                className="w-6 h-6 filter brightness-0 invert transition-all duration-300 ease-in-out hover:brightness-75"
+                width={24}
                 height={24}
               />
             </Link>
           ))}
         </div>
       </div>
+
       <div>
-        <form className='flex flex-col'>
-          <div className='mb-6'>
-            <label htmlFor='email' className='text-white block mb-2 text-sm font-medium'>
-              Your Email
-            </label>
+        <form className="flex flex-col">
+          <div className="mb-6">
+            <label htmlFor="email" className="text-white text-sm font-medium mb-2">Your Email</label>
             <input
-              name='email'
-              type='email'
-              id='email'
+              name="email"
+              type="email"
+              id="email"
               required
-              placeholder='Your email'
-              className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+              placeholder="Your email"
+              className="bg-[#18191E] border border-[#33353F] text-[#9CA2A9] text-sm rounded-md p-2 w-full transition-all duration-300 ease-in-out focus:border-primary-500 focus:outline-none"
             />
           </div>
-          <div className='mb-6'>
-            <label htmlFor='subject' className='text-white block mb-2 text-sm font-medium'>
-              Subject
-            </label>
+          <div className="mb-6">
+            <label htmlFor="subject" className="text-white text-sm font-medium mb-2">Subject</label>
             <input
-              name='subject'
-              type='text'
-              id='subject'
+              name="subject"
+              type="text"
+              id="subject"
               required
-              placeholder='Just saying hi'
-              className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+              placeholder="Just saying hi"
+              className="bg-[#18191E] border border-[#33353F] text-[#9CA2A9] text-sm rounded-md p-2 w-full transition-all duration-300 ease-in-out focus:border-primary-500 focus:outline-none"
             />
           </div>
-          <div className='mb-6'>
-            <label htmlFor='message' className='text-white block mb-2 text-sm font-medium'>
-              Message
-            </label>
+          <div className="mb-6">
+            <label htmlFor="message" className="text-white text-sm font-medium mb-2">Message</label>
             <textarea
-              name='message'
-              id='message'
-              className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-              placeholder="Let's talk about..."
+              name="message"
+              id="message"
+              className="bg-[#18191E] border border-[#33353F] text-[#9CA2A9] text-sm rounded-md p-2 w-full transition-all duration-300 ease-in-out focus:border-primary-500 focus:outline-none"
+              placeholder="Lets talk about..."
             />
           </div>
-          <button type='submit' className='bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>
+          <button type="submit" className="bg-gradient-to-r from-blue-500 via-pink-500 to-green-500 text-white font-medium p-2.5 px-5 rounded-md w-full transition-all duration-300 ease-in-out">
             Send Message
           </button>
         </form>
