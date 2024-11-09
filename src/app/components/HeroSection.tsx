@@ -3,14 +3,13 @@ import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
-import images from '../../../public/images/pic 2.png'; // Ensure the path is correct
+import images from '../../../public/images/pic 2.png'; 
 
 const HeroSection = () => {
   return (
-    <section className="pt-24 pb-24 flex justify-center items-center">
+    <section className="pt-5 pb-12 flex justify-center items-center">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        
-        {/* Hero Text (Left side) */}
+
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -56,13 +55,12 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        {/* Hero Image (Right side) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="flex justify-center w-full md:w-[45%]">
-          <div className="relative w-48 h-48 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-black transition-all duration-300">
+           <div className="relative w-[250px] h-[250px] md:w-[380px] md:h-[380px] rounded-full bg-[#181818] flex items-center justify-center overflow-hidden">
             <Image
               src={images}
               alt="profile"
