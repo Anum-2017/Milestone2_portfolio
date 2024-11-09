@@ -37,6 +37,7 @@ const ContactSection = () => {
         <form className="flex flex-col">
           <div className="mb-6">
             <label htmlFor="email" className="text-white text-sm font-medium mb-2">Your Email</label>
+               <br/> <br/>
             <input
               name="email"
               type="email"
@@ -48,6 +49,7 @@ const ContactSection = () => {
           </div>
           <div className="mb-6">
             <label htmlFor="subject" className="text-white text-sm font-medium mb-2">Subject</label>
+                 <br/> <br/>
             <input
               name="subject"
               type="text"
@@ -59,6 +61,7 @@ const ContactSection = () => {
           </div>
           <div className="mb-6">
             <label htmlFor="message" className="text-white text-sm font-medium mb-2">Message</label>
+               <br/> <br/>
             <textarea
               name="message"
               id="message"
