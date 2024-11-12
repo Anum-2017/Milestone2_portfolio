@@ -82,34 +82,32 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-16">
-      <div className="container mx-auto">
-      <div className="flex flex-col font-serif text-center w-full mb-20">
-            <h1 className="sm:text-5xl text-5xl font-serif font-bold title-font text-white">
-              My
-              <span className="text-5xl text-white sm:text-5xl font-serif font-bold ml-[15px]">
-                Projects
-              </span>
-            </h1>
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {["All", "Typescript", "HTML/CSS/JS", "Next.JS"].map((tag) => (
-          <button
-            key={tag}
-            className={`px-4 py-2 text-sm rounded-full border-2 cursor-pointer transition-all duration-300 
-            ${filter === tag ? 'border-pink-500 text-white' : 'border-gray-600 text-white'} 
-              hover:border-white`}
-            onClick={() => setFilter(tag)}
+    <section id="projects" className="project-section">
+      <div className="project-container">
+        <div className="project-header">
+          <h1 className="project-title">
+            My
+            <span className="project-subtitle"> Projects</span>
+          </h1>
+        </div>
+
+        <div className="tag-container">
+          {["All", "Typescript", "HTML/CSS/JS", "Next.JS"].map((tag) => (
+            <button
+              key={tag}
+              className={`tag-button ${filter === tag ? 'active' : ''}`}
+              onClick={() => setFilter(tag)}
             >
-            {tag}
-          </button>
-             ))}
-          </div>
-        <ul ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        <ul ref={ref} className="project-grid">
           {filteredProjects.map((project, index) => (
             <motion.li
               key={project.id}
-              className="project-item"
+              className={`project-item ${isInView ? 'animate' : ''}`}
               variants={cardVariants}
               initial="initial"
               animate={isInView ? "animate" : "initial"}
