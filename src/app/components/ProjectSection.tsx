@@ -65,6 +65,15 @@ const projectsData = [
     gitUrl: "https://github.com/Anum-2017/Shopco-ecommercewebsite.git",
     previewUrl: "https://shopco-ecommercewebsite.vercel.app/",
   },
+  {
+    id: 8,
+    title: "Dynamic Blog Website",
+    description: "Blog Website using next.js and tailwind css.",
+    image: "images/projects/blog-website.png",
+    tag: ["All", "Next.JS"],
+    gitUrl: "https://github.com/Anum-2017/milestone3_dynamic_blog.git",
+    previewUrl: "https://milestone3-dynamic-blog.vercel.app/",
+  },
 ];
 
 const Projects = () => {
